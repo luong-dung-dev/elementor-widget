@@ -1,0 +1,362 @@
+/**
+ * My Custom Widget - Editor Styles
+ * 
+ * Styles for the product creation popup modal in Elementor editor.
+ * High z-index ensures popup appears above Elementor's interface.
+ * 
+ * @package My_Elementor_Widget
+ * @version 1.0.0
+ */
+
+/* ===== Popup Modal Overlay ===== */
+#custom-widget-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 999999; /* Above Elementor's highest z-index */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* ===== Popup Content Container ===== */
+#custom-widget-popup .custom-popup-content {
+	background: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	max-width: 500px;
+	width: 90%;
+	max-height: 90vh;
+	overflow-y: auto;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+	position: relative;
+	animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* ===== Popup Header ===== */
+#custom-widget-popup h2 {
+	margin: 0 0 25px;
+	color: #333;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+/* ===== Form Groups ===== */
+#custom-widget-popup .form-group {
+	margin-bottom: 20px;
+}
+
+#custom-widget-popup .form-group:last-of-type {
+	margin-bottom: 0;
+}
+
+/* ===== Form Labels ===== */
+#custom-widget-popup label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 600;
+	color: #555;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+#custom-widget-popup .required {
+	color: #dc3232;
+}
+
+/* ===== Form Inputs ===== */
+#custom-widget-popup input[type="text"],
+#custom-widget-popup input[type="number"],
+#custom-widget-popup textarea {
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: inherit;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#custom-widget-popup textarea {
+	resize: vertical;
+	min-height: 60px;
+}
+
+#custom-widget-popup input:focus,
+#custom-widget-popup textarea:focus {
+	outline: none;
+	border-color: #0073aa;
+	box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+#custom-widget-popup input::placeholder,
+#custom-widget-popup textarea::placeholder {
+	color: #999;
+}
+
+#custom-widget-popup input:disabled,
+#custom-widget-popup textarea:disabled {
+	background-color: #f5f5f5;
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+
+/* ===== Form Actions (Buttons Row) ===== */
+#custom-widget-popup .form-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+#custom-widget-popup button {
+	flex: 1;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+#custom-widget-popup button[type="submit"] {
+	background: #46b450;
+	color: white;
+}
+
+#custom-widget-popup button[type="submit"]:hover {
+	background: #3a9941;
+	transform: translateY(-1px);
+	box-shadow: 0 2px 8px rgba(70, 180, 80, 0.3);
+}
+
+#custom-widget-popup .cancel-btn {
+	background: #dc3232;
+	color: white;
+}
+
+#custom-widget-popup .cancel-btn:hover {
+	background: #b32c2c;
+	transform: translateY(-1px);
+	box-shadow: 0 2px 8px rgba(220, 50, 50, 0.3);
+}
+
+#custom-widget-popup button:active {
+	transform: translateY(0);
+}
+
+#custom-widget-popup button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+#custom-widget-popup button:disabled:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+/* ===== Form Messages (Success/Error) ===== */
+#custom-widget-popup .form-message {
+	margin-top: 15px;
+	padding: 12px 15px;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.5;
+	animation: fadeIn 0.2s ease;
+}
+
+#custom-widget-popup .form-message.success {
+	background-color: #d4edda;
+	border: 1px solid #c3e6cb;
+	color: #155724;
+}
+
+#custom-widget-popup .form-message.error {
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	color: #721c24;
+}
+
+#custom-widget-popup .form-message a {
+	color: inherit;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+#custom-widget-popup .form-message a:hover {
+	text-decoration: none;
+}
+
+/* ===== Success Options UI ===== */
+#custom-widget-popup .success-options {
+	text-align: center;
+	padding: 20px 0;
+	animation: fadeIn 0.3s ease;
+}
+
+#custom-widget-popup .success-icon {
+	width: 60px;
+	height: 60px;
+	margin: 0 auto 20px;
+	background: #46b450;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	color: white;
+	font-weight: bold;
+	animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+#custom-widget-popup .success-options h3 {
+	margin: 0 0 20px;
+	color: #155724;
+	font-size: 22px;
+	font-weight: 600;
+}
+
+#custom-widget-popup .product-preview {
+	background: #f8f9fa;
+	padding: 15px;
+	border-radius: 6px;
+	margin-bottom: 15px;
+	border: 1px solid #e9ecef;
+}
+
+#custom-widget-popup .product-preview strong {
+	display: block;
+	color: #333;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+#custom-widget-popup .preview-price {
+	color: #0073aa;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+#custom-widget-popup .success-description {
+	color: #666;
+	font-size: 14px;
+	margin-bottom: 25px;
+	line-height: 1.5;
+}
+
+#custom-widget-popup .success-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+#custom-widget-popup .add-now-btn {
+	background: #0073aa;
+	color: white;
+	padding: 14px 24px;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 4px rgba(0, 115, 170, 0.2);
+}
+
+#custom-widget-popup .add-now-btn:hover {
+	background: #005a87;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 115, 170, 0.3);
+}
+
+#custom-widget-popup .add-now-btn .btn-icon {
+	font-size: 20px;
+}
+
+#custom-widget-popup .close-later-btn {
+	background: #f8f9fa;
+	color: #333;
+	padding: 12px 24px;
+	border: 2px solid #dee2e6;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+#custom-widget-popup .close-later-btn:hover {
+	background: #e9ecef;
+	border-color: #adb5bd;
+}
+
+#custom-widget-popup .edit-product-link {
+	display: inline-block;
+	color: #666;
+	font-size: 13px;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+#custom-widget-popup .edit-product-link:hover {
+	color: #0073aa;
+	text-decoration: underline;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+	#custom-widget-popup .custom-popup-content {
+		width: 95%;
+		padding: 20px;
+	}
+	
+	#custom-widget-popup h2 {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	
+	#custom-widget-popup .form-actions {
+		flex-direction: column;
+	}
+	
+	#custom-widget-popup button {
+		width: 100%;
+	}
+}
+
