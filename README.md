@@ -5,7 +5,6 @@ Requirement: Install Docker Desktop on macOS.
 ### 1) Start services
 
 ```bash
-cd /Users/dung.luong/wordpress_project
 # Create .env from sample (if not exists)
 cp env.sample .env
 docker compose up -d
